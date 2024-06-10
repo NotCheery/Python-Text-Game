@@ -1,24 +1,17 @@
-# meal-plan
+# Story Plan
 
-Application needs . . .
-- Meal Plan
-  - Different recipes to cook throughout the week, month, year, etc.
-  - add/update/delete meal
-  - meal id: recipe name
-  - ingridients - dictionary
-  - recipe - text/link
+This is a Text-based game.
 
-- Schedule Plan
-  - our plans throughout the next week, month, year, etc.
-  - can integrate entire schedule - integrating any plans you have that will affect your eating next week.
-  - add/update/delete plans
-  - eating_location: ['at home', 'not at home']
-  - plan id: what the plan is/text
-  - date: month/date/year
-  - time: ['breakfast','lunch','dinner']
-  
-- Grocery List
-  - what foods to buy based on the meals for the next two weeks
-  - add/update/delete individual items
-  - count: integer (number of items needed)
-  - grocery id: text
+Cafe 
+- Has 2 pathways.
+- Match-making pathway where user plays as a match-maker.
+- Maze pathway where user has to escape a maze.
+
+Technologies to Use:
+- Python for text-based-game.
+- Flask to create web server to handle game logic and serve as front-end.
+- React for responsive user-interface.
+- SQL for storing game data, such as inventory or saving progress.
+
+
+

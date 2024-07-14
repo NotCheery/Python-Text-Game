@@ -30,5 +30,7 @@ How to achieve this?
 For scene 1, use random() function?
 For scene 2, use return, conditionals, functions
 
+Should also store pass or fail for each scenario.
+
 
 

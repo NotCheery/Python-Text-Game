@@ -28,7 +28,8 @@ def game1(name):
             ask_again -= 1
     
     if ask_again == 0:
-        print("The man goes crazy!")
+        print("The man goes crazy and takes out a pocket knife!")
+        
     
     
 

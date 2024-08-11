@@ -12,16 +12,16 @@ def character_stats():
     inventory = {}
     
     #Display character stats when called
-    print(f"Charm: {charm} ")
-    print(f"Smart: {smart} ")
-    print(f"Friendliness: {friendliness} ")
-    print(f"Luck: {luck} ")
+    print(f"Character status: \nCharm: {charm}/5 ")
+    print(f"Smart: {smart}/5 ")
+    print(f"Friendliness: {friendliness}/5 ")
+    print(f"Luck: {luck}/5 ")
     print(f"Inventory: {inventory}")
 
-def game1(name):
+def game1():
         #Print out the scene after name
-    print(f"Hi {name}! You are working as a cashier at a local cafe.\nIt's nearly 10 pm and there's no one around.")
-    print(f"Suddenly, you hear the door open and noitce a man walk in.\n{name}: Hi, welcome to Rosy Cafe!")
+    print(f"Hi! You are working as a cashier at a local cafe.\nIt's nearly 10 pm and there's no one around.")
+    print(f"Suddenly, you hear the door open and noitce a man walk in.\nYou: Hi, welcome to Rosy Cafe!")
     
     #Can increase luck points
     print(f"The man: Want to play a game of rock, papers, scissors?")
@@ -53,14 +53,36 @@ def game1(name):
 
 #Scenario 2    
 def basement():
-    inventory = {}
-    print("You are in basement.\nYou find a note. Open note?")
-    answer = int(input("1 = Yes\n2 = NoEnter a number: "))
+    print("You are in basement.\nSelect which rooms you want to explore.")
+    answer = int(input("1 = Kitchen\n2 = Storage\n\nEnter a number: "))
     if answer == 1:
-        Note_1 = "Hide 1"
-        print("Hide - 1\nNote 1 has been added to your inventory.")
+        kitchen()
+    else:
+        storage()
+        
+def kitchen():
+    answer = int(input("You are in the kitchen. Take a look at the . . .\n1 = Fridge\n2 = Sink\n3 = Return to main room"))
+    if answer == 1:
+        open_inventory = int(input("You look closer and find a note. The note has been added to your inventory. To open inventory and character stats, press and enter 1: "))
+        if open_inventory == 1:
+            character_stats()
+    elif answer == 2:
+        print("You find nothing interesting. To return to kitchen, enter 1.\n To return to the main room, enter 2.")
+        #input and consider while loop?
+    else:
+        basement()
+        
+def storage():
+    print("You are in the storage room. You look around and you notice there's a safe. You need code **** to unlock.")
+    answer = int(input("You may enter code or enter 1 to return to the main room: "))
+    if answer == 1:
+        basement()
+    elif answer == 1786:
+        print("You've unlocked the safe! You have obtained a key.")
+        smart += 1
+    else:
+        print("Invalid entry. Try again!")
+        storage()
     
 if __name__ == "__main__":
-    #Enter your name
-    user_name = str(input("Hello there! What is your name? "))
-    game1(user_name)
+    game1()
